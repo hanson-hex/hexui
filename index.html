@@ -31,39 +31,13 @@
       }
     </style>
     <style>
-      .h-button {
-        font-size: var(--font-size);
-        height: var(--button-height);
-        padding: 0 1em; /*width*/
-        font: inherit;
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius);
-        background: var(--button-bg);
-      }
-      .h-button:hover {
-        border-color: var(--border-color-hover);
-      }
-      .h-button:active {
-        background: var(--button-active-bg);
-      }
-      .h-button:focus {
-        outline: none;
-      }
     </style>
   </head>
   <body>
     <div id="app">
       <h-button></h-button>
     </div>
-    <script src="./node_modules/vue/dist//vue.min.js"></script>
-    <script src="button.js"></script>
-    <script>
-      new Vue({
-        el: "#app",
-        data: {
-          message: "hi",
-        },
-      })
+    <script src="./src/app.js"></script>
     </script>
   </body>
 </html>
