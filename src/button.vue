@@ -1,6 +1,7 @@
 <template>
   <button class="h-button" :class="{ [`icon-${iconPosition}`]: true }">
-    <h-icon :name="icon"></h-icon>
+    <h-icon v-if="icon" :name="icon"></h-icon>
+    <h-icon class="loading" name="loading"></h-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -27,14 +28,12 @@ export default {
 .h-button {
   font-size: var(--font-size);
   height: var(--button-height);
-  padding: 0 0.8em; /*width*/
-  font: inherit;
+  padding: 0 1em; /*width*/
   vertical-align: middle;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   background: var(--button-bg);
   display: inline-flex;
-  justify-content: center;
   align-items: center;
   &:hover {
     border-color: var(--border-color-hover);
@@ -44,6 +43,17 @@ export default {
   }
   &:focus {
     outline: none;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .loading {
+    animation: spin 1s infinite linear;
   }
   > .icon {
     order: 1;
