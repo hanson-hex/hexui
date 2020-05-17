@@ -5,7 +5,17 @@
 </template>
 
 <script>
-export default {}
+export default {
+  mounted() {
+    for (let node of this.$el.children) {
+      if (node.nodeName.toLowerCase() !== "button") {
+        console.warn(
+          `button-group里面的元素必须都为h-button，里面发现了标签${node.nodeName}`
+        )
+      }
+    }
+  },
+}
 </script>
 
 <style lang="scss">
@@ -14,10 +24,10 @@ export default {}
   vertical-align: middle;
   > .h-button {
     border-radius: 0;
-    // &:not(:first-child) {
-    //   border-left: none;
-    // }
-    margin-left: -1px;
+    &:not(:first-child) {
+      //   border-left: none;
+      margin-left: -1px;
+    }
     &:first-child {
       border-top-left-radius: var(--border-radius);
       border-bottom-left-radius: var(--border-radius);
