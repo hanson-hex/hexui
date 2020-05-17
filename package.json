@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/hanson-hex/hexui/issues"
   },
-  "homepage": "https://github.com/hanson-hex/hexui#readme"
+  "homepage": "https://github.com/hanson-hex/hexui#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
