@@ -1,7 +1,11 @@
 <template>
-  <button class="h-button" :class="{ [`icon-${iconPosition}`]: true }">
-    <h-icon v-if="icon" :name="icon"></h-icon>
-    <h-icon class="loading" name="loading"></h-icon>
+  <button
+    @click="() => $emit('click')"
+    class="h-button"
+    :class="{ [`icon-${iconPosition}`]: true }"
+  >
+    <h-icon v-if="icon && !loading" :name="icon"></h-icon>
+    <h-icon class="loading" v-if="loading" name="loading"></h-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -13,6 +17,10 @@ export default {
   props: ["icon", "iconPosition"],
   props: {
     icon: {},
+    loading: {
+      type: Boolean,
+      default: false,
+    },
     iconPosition: {
       type: String,
       default: "left",

@@ -29,19 +29,27 @@
       body {
         font-size: var(--font-size);
       }
-      .icon {
-      }
     </style>
   </head>
   <body>
     <div id="app">
-      <h-button>
+      <h-button :loading="loading1" @click="loading1 = !loading1">
         按钮
       </h-button>
-      <h-button icon="setting" icon-position="left">
+      <h-button
+        icon="setting"
+        :loading="loading2"
+        @click="loading2 = !loading2"
+        icon-position="left"
+      >
         按钮
       </h-button>
-      <h-button icon="setting" icon-position="right">
+      <h-button
+        icon="setting"
+        :loading="loading3"
+        @click="loading3 = !loading3"
+        icon-position="right"
+      >
         按钮
       </h-button>
     </div>
