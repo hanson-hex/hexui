@@ -13,8 +13,12 @@
 </template>
 
 <script>
+import Icon from "./icon"
 export default {
   props: ["icon", "iconPosition"],
+  components: {
+    "h-icon": Icon,
+  },
   props: {
     icon: {},
     loading: {
