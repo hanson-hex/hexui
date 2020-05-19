@@ -2,7 +2,7 @@
 
 ## 作者 hanson-hex
 
-[![Build Status](https://travis-ci.org/hanson-hex/hexui.svg?branch=master)](https://travis-ci.org/hanson-hex/hexui)
+[![Build Status](https://travis-ci.org/hanson-hex/hexui.svg?branch=dev)](https://travis-ci.org/hanson-hex/hexui)
 
 ## 介绍
 
