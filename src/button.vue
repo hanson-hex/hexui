@@ -1,7 +1,7 @@
 <template>
   <button
     @click="() => $emit('click')"
-    class="h-button frank"
+    class="h-button"
     :class="{ [`icon-${iconPosition}`]: true }"
   >
     <h-icon v-if="icon && !loading" :name="icon"></h-icon>
@@ -15,6 +15,7 @@
 <script>
 import Icon from "./icon"
 export default {
+  name: "HButton",
   props: ["icon", "iconPosition"],
   components: {
     "h-icon": Icon,
@@ -36,7 +37,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .h-button {
   font-size: var(--font-size);
   height: var(--button-height);

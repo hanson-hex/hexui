@@ -52,17 +52,11 @@
     import "hansonhex-ui/dist/index.css";
 
     export default {
-    name: "Home",
+    name: "app",
     components: {
         "h-button": Button
     }
     };
-    ```
-
-4、引入 svg symbols
-
-    ```javascript
-    <script src="//at.alicdn.com/t/font_1824005_8goz0ip4zrx.js"></script>
     ```
 
 ## 文档

@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "HButtonGroup",
   mounted() {
     for (let node of this.$el.children) {
       if (node.nodeName.toLowerCase() !== "button") {
@@ -18,7 +19,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .h-button-group {
   display: inline-flex;
   vertical-align: middle;
