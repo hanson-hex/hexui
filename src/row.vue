@@ -16,7 +16,6 @@ export default {
       validator(value) {
         ;["left", "right", "center"].includes(value)
       },
-      default: "left",
     },
   },
   computed: {
