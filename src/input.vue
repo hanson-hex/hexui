@@ -2,10 +2,10 @@
   <div class="wrapper" :class="{ error }">
     <input
       :value="value"
-      @change="$emit('change', $event)"
-      @focus="$emit('focus', $event)"
-      @blur="$emit('blur', $event)" 
-      @input="$emit('input', $event)" 
+      @change="$emit('change', $event.target.value)"
+      @focus="$emit('focus', $event.target.value)"
+      @blur="$emit('blur', $event.target.value)" 
+      @input="$emit('input', $event.target.value)" 
       :disabled="disabled" 
       :readonly="readonly" 
       type="text"

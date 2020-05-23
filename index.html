@@ -43,8 +43,12 @@
       <div class="box">
         <h-input value="李四" error="中文名大于两个字!"></h-input>
       </div> -->
-      <div class="box">
+      <!-- <div class="box">
         <h-input value="李四" @change="inputChange"></h-input>
+      </div> -->
+      <div class="box">
+        <h-input value="小何" v-model="message"></h-input>
+        <p>{{ message }}</p>
       </div>
       <div class="box">
         <h-button :loading="loading1" @click="loading1 = !loading1">
