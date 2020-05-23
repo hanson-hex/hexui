@@ -32,10 +32,41 @@
       .box {
         margin: 20px 0;
       }
+      .demoBox {
+        height: 50px;
+        background-color: grey;
+        border: 1px solid red;
+      }
     </style>
   </head>
   <body>
     <div id="app">
+      <h-row class="topbar">
+        <h-col class="demoBox" span="9">
+          <h-row align="left">
+            <h-col>1</h-col>
+            <h-col>2</h-col>
+            <h-col>3</h-col>
+            <h-col>4</h-col>
+          </h-row>
+        </h-col>
+        <h-col class="demoBox" span="15">
+          <h-row align="right">
+            <h-col>1</h-col>
+            <h-col>2</h-col>
+            <h-col>3</h-col>
+            <h-col>4</h-col>
+            <h-col>5</h-col>
+            <h-col>6</h-col>
+            <h-col>7</h-col>
+          </h-row>
+        </h-col>
+      </h-row>
+      <h-row class="logo-and-search-and-qrcode">
+        <h-col class="demoBox" span="4"></h-col>
+        <h-col class="demoBox" span="14"></h-col>
+        <h-col class="demoBox" span="6"></h-col>
+      </h-row>
       <div style="border:1px solid black">
         <h-row gutter="20">
           <h-col>1</h-col>
