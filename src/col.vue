@@ -54,9 +54,13 @@ export default {
         span && `col-${span}`,
         offset && `offset-${offset}`,
         ipad && `col-ipad-${ipad.span}`,
+        ipad && `offset-ipad-${ipad.offset}`,
         narrowPc && `col-narrow-pc-${narrowPc.span}`,
+        narrowPc && `offset-narrow-pc-${narrowPc.offset}`,
         pc && `col-pc-${pc.span}`,
+        pc && `offset-pc-${pc.offset}`,
         widePc && `col-wide-pc-${widePc.span}`,
+        widePc && `offset-wide-pc-${widePc.offset}`,
       ]
     },
     colStyle() {
