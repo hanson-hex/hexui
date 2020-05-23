@@ -41,7 +41,7 @@
   </head>
   <body>
     <div id="app">
-      <h-row class="topbar">
+      <!-- <h-row class="topbar">
         <h-col class="demoBox" span="9">
           <h-row align="left">
             <h-col>1</h-col>
@@ -66,8 +66,29 @@
         <h-col class="demoBox" span="4"></h-col>
         <h-col class="demoBox" span="14"></h-col>
         <h-col class="demoBox" span="6"></h-col>
-      </h-row>
+      </h-row> -->
       <div style="border:1px solid black">
+        <h-row gutter="20">
+          <h-col
+            span="2"
+            :phone="{span: 12}"
+            :ipad="{span: 8}"
+            :narrow-pc="{span: 4}"
+            :pc="{span: 2}"
+            :wide-pc="{span: 1}"
+            >1</h-col
+          >
+          <h-col
+            span="20"
+            offset="2"
+            :phone="{span: 12}"
+            :ipad="{span: 16}"
+            :narrow-pc="{span: 20}"
+            :pc="{span: 22}"
+            :wide-pc="{span: 23}"
+            >11</h-col
+          >
+        </h-row>
         <h-row gutter="20">
           <h-col>1</h-col>
           <h-col>2</h-col>
@@ -82,10 +103,6 @@
           <h-col>2</h-col>
           <h-col>3</h-col>
           <h-col>4</h-col>
-        </h-row>
-        <h-row gutter="20">
-          <h-col span="2">1</h-col>
-          <h-col span="20" offset="2">11</h-col>
         </h-row>
         <h-row gutter="20">
           <h-col span="4">1</h-col>
