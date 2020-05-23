@@ -24,199 +24,28 @@
         --border-color-hover: #666;
       }
       #app {
-        margin: 20px;
       }
       body {
         font-size: var(--font-size);
       }
-      .box {
-        margin: 20px 0;
-      }
-      .demoBox {
-        height: 50px;
-        background-color: grey;
-        border: 1px solid red;
-      }
       .demo {
         background: #ddd;
         border: 1px solid #666;
-        height: 100px;
+        min-height: 100px;
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <h-row>
-        <h-col
-          span="24"
-          :ipad="{span: 12}"
-          :narrow-pc="{span: 8}"
-          :pc="{span: 6}"
-          :wide-pc="{span: 4}"
-        >
-          <div class="demo"></div>
-        </h-col>
-        <h-col
-          span="24"
-          :ipad="{span: 12}"
-          :narrow-pc="{span: 8}"
-          :pc="{span: 6}"
-          :wide-pc="{span: 4}"
-        >
-          <div class="demo"></div>
-        </h-col>
-        <h-col
-          span="24"
-          :ipad="{span: 12}"
-          :narrow-pc="{span: 8}"
-          :pc="{span: 6}"
-          :wide-pc="{span: 4}"
-        >
-          <div class="demo"></div>
-        </h-col>
-        <h-col
-          span="24"
-          :ipad="{span: 12}"
-          :narrow-pc="{span: 8}"
-          :pc="{span: 6}"
-          :wide-pc="{span: 4}"
-        >
-          <div class="demo"></div>
-        </h-col>
-        <h-col
-          span="24"
-          :ipad="{span: 12}"
-          :narrow-pc="{span: 8}"
-          :pc="{span: 6}"
-          :wide-pc="{span: 4}"
-        >
-          <div class="demo"></div>
-        </h-col>
-        <h-col
-          span="24"
-          :ipad="{span: 12}"
-          :narrow-pc="{span: 8}"
-          :pc="{span: 6}"
-          :wide-pc="{span: 4}"
-        >
-          <div class="demo"></div>
-        </h-col>
-        <h-col
-          span="24"
-          :ipad="{span: 12}"
-          :narrow-pc="{span: 8}"
-          :pc="{span: 6}"
-          :wide-pc="{span: 4}"
-        >
-          <div class="demo"></div>
-        </h-col>
-      </h-row>
-      <!-- <h-row class="topbar">
-        <h-col class="demoBox" span="9">
-          <h-row align="left">
-            <h-col>1</h-col>
-            <h-col>2</h-col>
-            <h-col>3</h-col>
-            <h-col>4</h-col>
-          </h-row>
-        </h-col>
-        <h-col class="demoBox" span="15">
-          <h-row align="right">
-            <h-col>1</h-col>
-            <h-col>2</h-col>
-            <h-col>3</h-col>
-            <h-col>4</h-col>
-            <h-col>5</h-col>
-            <h-col>6</h-col>
-            <h-col>7</h-col>
-          </h-row>
-        </h-col>
-      </h-row>
-      <h-row class="logo-and-search-and-qrcode">
-        <h-col class="demoBox" span="4"></h-col>
-        <h-col class="demoBox" span="14"></h-col>
-        <h-col class="demoBox" span="6"></h-col>
-      </h-row> -->
-      <!-- <div style="border:1px solid black">
-        <h-row gutter="20">
-          <h-col
-            span="24"
-            :ipad="{span: 8}"
-            :narrow-pc="{span: 4}"
-            :pc="{span: 2}"
-            :wide-pc="{span: 1}"
-            >1</h-col
-          >
-          <h-col
-            span="24"
-            :ipad="{span: 16}"
-            :narrow-pc="{span: 20}"
-            :pc="{span: 22}"
-            :wide-pc="{span: 23}"
-            >11</h-col
-          >
-        </h-row>
-        <h-row gutter="20">
-          <h-col>1</h-col>
-          <h-col>2</h-col>
-        </h-row>
-        <h-row gutter="20">
-          <h-col>1</h-col>
-          <h-col>2</h-col>
-          <h-col>3</h-col>
-        </h-row>
-        <h-row gutter="20">
-          <h-col>1</h-col>
-          <h-col>2</h-col>
-          <h-col>3</h-col>
-          <h-col>4</h-col>
-        </h-row>
-        <h-row gutter="20">
-          <h-col span="4">1</h-col>
-          <h-col span="20">11</h-col>
-        </h-row>
-      </div> -->
-      <!-- <div class="box">
-        <h-input disabled value="张三"></h-input>
-        <h-input value="王五" readonly></h-input>
-      </div>
-      <div class="box">
-        <h-input value="李四" error="中文名大于两个字!"></h-input>
-      </div> -->
-      <!-- <div class="box">
-        <h-input value="李四" @change="inputChange"></h-input>
-      </div> -->
-      <div class="box">
-        <h-input value="小何" v-model="message"></h-input>
-        <p>{{ message }}</p>
-      </div>
-      <div class="box">
-        <h-button :loading="loading1" @click="loading1 = !loading1">
-          按钮
-        </h-button>
-        <h-button
-          icon="setting"
-          :loading="loading2"
-          @click="loading2 = !loading2"
-          icon-position="left"
-        >
-          按钮
-        </h-button>
-        <h-button
-          icon="setting"
-          :loading="loading3"
-          @click="loading3 = !loading3"
-          icon-position="right"
-        >
-          按钮
-        </h-button>
-        <h-button-group>
-          <h-button icon="left">上一页</h-button>
-          <h-button icon-position="right" icon="right">下一页</h-button>
-        </h-button-group>
-      </div>
+      <h-layout style="height: 100vh;">
+        <h-sider class="demo">sider</h-sider>
+        <h-layout>
+          <h-header class="demo">header</h-header>
+          <h-content class="demo">content</h-content>
+          <h-footer class="demo">footer</h-footer>
+        </h-layout>
+      </h-layout>
     </div>
     <script src="./src/app.js"></script>
-    <!-- <script src="//at.alicdn.com/t/font_1824005_8goz0ip4zrx.js"></script> -->
   </body>
 </html>

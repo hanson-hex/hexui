@@ -5,6 +5,11 @@ import ButtonGroup from "./button-group"
 import Input from "./input"
 import Col from "./col"
 import Row from "./row"
+import Layout from "./layout"
+import Header from "./header"
+import Sider from "./Sider"
+import Content from "./content"
+import Footer from "./footer"
 
 Vue.component("h-button", Button)
 Vue.component("h-icon", Icon)
@@ -12,6 +17,11 @@ Vue.component("h-button-group", ButtonGroup)
 Vue.component("h-input", Input)
 Vue.component("h-row", Row)
 Vue.component("h-col", Col)
+Vue.component("h-layout", Layout)
+Vue.component("h-content", Content)
+Vue.component("h-header", Header)
+Vue.component("h-sider", Sider)
+Vue.component("h-footer", Footer)
 
 new Vue({
   el: "#app",
