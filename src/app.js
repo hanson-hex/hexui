@@ -41,7 +41,18 @@ new Vue({
       console.log("1", e.target.value)
     },
     showToast() {
-      this.$toast("hello")
+      this.$toast(
+        "<p><strong>知道了<strong><a href='https://www.qq.com'>qq</a></p><p><strong>知道了<strong><a href='https://www.qq.com'>qq</a></p><p><strong>知道了<strong><a href='https://www.qq.com'>qq</a></p>",
+        {
+          enableHtml: false,
+          // closeButton: {
+          //   text: "知道了",
+          //   callback: (toast) => {
+          //     console.log("用户知道了")
+          //   },
+          // },
+        }
+      )
     },
   },
 })
