@@ -155,9 +155,13 @@ $animation-time: 300ms;
   }
   &.position-top {
     top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
   &.position-bottom {
     bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     transform: translateX(-50%);
   }
   &.position-middle {
