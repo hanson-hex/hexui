@@ -28,35 +28,11 @@
       body {
         font-size: var(--font-size);
       }
-      .demo {
-        background: #ddd;
-        border: 1px solid #666;
-        min-height: 100px;
-      }
-      .sider {
-        background-color: #333;
-        width: 200px;
-      }
-      .header {
-        background-color: #999;
-        height: 100px;
-      }
-      .footer {
-        background-color: #999;
-        height: 100px;
-      }
     </style>
   </head>
   <body>
     <div id="app">
-      <h-layout style="height: 100vh;">
-        <h-sider class="demo">sider</h-sider>
-        <h-layout>
-          <h-header class="demo">header</h-header>
-          <h-content class="demo">content</h-content>
-          <h-footer class="demo">footer</h-footer>
-        </h-layout>
-      </h-layout>
+      <button @click="showToast">显示</button>
     </div>
     <script src="./src/app.js"></script>
   </body>
