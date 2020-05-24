@@ -40,19 +40,32 @@ new Vue({
     inputChange(e) {
       console.log("1", e.target.value)
     },
+    showToast1 () {
+      this.$toast("hello", {
+        position: "top"
+      })
+    },
+    showToast2 () {
+      this.$toast("hello", {
+        position: "middle"
+      })
+    },
+    showToast3 () {
+      this.$toast("hello", {
+        position: "bottom"
+      })
+    },
     showToast() {
-      this.$toast(
-        "<p><strong>知道了<strong><a href='https://www.qq.com'>qq</a></p><p><strong>知道了<strong><a href='https://www.qq.com'>qq</a></p><p><strong>知道了<strong><a href='https://www.qq.com'>qq</a></p>",
-        {
-          enableHtml: false,
-          // closeButton: {
-          //   text: "知道了",
-          //   callback: (toast) => {
-          //     console.log("用户知道了")
-          //   },
-          // },
-        }
-      )
+      this.$toast("智商需要充值", {
+        enableHtml: false,
+        position: "bottom",
+        closeButton: {
+          text: "知道了",
+          callback: () => {},
+        },
+        autoClose: true,
+        autoCloseDelay: 300,
+      })
     },
   },
 })
