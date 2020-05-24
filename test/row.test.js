@@ -10,7 +10,25 @@ describe("Row", () => {
   it("存在", () => {
     expect(Row).to.be.exist
   })
-  it("接受 gutter 属性", (done) => {
+  it("接受 23 属性", function(done) {
+    const div = document.createElement("div")
+    document.body.appendChild(div)
+    Vue.component("h-row", Row)
+    div.innerHTML = `
+    <h-row align="right">
+    </h-row>
+    `
+    const vm = new Vue({
+      el: div,
+    })
+    setTimeout(() => {
+      const row = vm.$el.querySelector(".row")
+      expect(getComputedStyle(row).justifyContent).to.be.eq("flex-end")
+      vm.$el.remove()
+      done()
+    }, 0)
+  })
+  it("接受 gutter 属性", function(done) {
     const div = document.createElement("div")
     document.body.appendChild(div)
     Vue.component("h-row", Row)
@@ -31,28 +49,8 @@ describe("Row", () => {
       const col = vm.$el.querySelectorAll(".col")
       expect(getComputedStyle(col[0]).paddingLeft).to.be.eq("10px")
       expect(getComputedStyle(col[1]).paddingRight).to.be.eq("10px")
-      done()
       vm.$el.remove()
-      vm.$destory()
-    }, 0)
-  })
-  it("接受 align 属性", (done) => {
-    const div = document.createElement("div")
-    document.body.appendChild(div)
-    Vue.component("h-row", Row)
-    div.innerHTML = `
-    <h-row align="right">
-    </h-row>
-    `
-    const vm = new Vue({
-      el: div,
-    })
-    setTimeout(() => {
-      const row = vm.$el.querySelector(".row")
-      expect(getComputedStyle(row).justifyContent).to.be.eq("flex-end")
       done()
-      vm.$el.remove()
-      vm.$destory()
     }, 0)
   })
 })

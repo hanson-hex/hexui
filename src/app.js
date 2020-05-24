@@ -63,8 +63,7 @@ new Vue({
           text: "知道了",
           callback: () => {},
         },
-        autoClose: true,
-        autoCloseDelay: 300,
+        autoClose: 2,
       })
     },
   },
