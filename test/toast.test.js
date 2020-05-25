@@ -32,7 +32,7 @@ describe("Input", () => {
       })
     })
   })
-  it("接受 closeButton", () => {
+  it("接受 closeButton", (done) => {
     const callback = sinon.fake()
     const Constructor = Vue.extend(Toast)
     const vm = new Constructor({
@@ -46,8 +46,11 @@ describe("Input", () => {
     vm.$mount()
     var closeButton = vm.$el.querySelector(".close")
     expect(closeButton.textContent.trim()).to.eq("知道了")
-    // closeButton.click() // 不知道哪里来的错误
-    // expect(callback).to.have.been.called
+    setTimeout(() => {
+      closeButton.click() // 不知道哪里来的错误
+      expect(callback).to.have.been.called
+      done()
+    }, 200)
   })
   it("接受 enableHtml", () => {
     const Constructor = Vue.extend(Toast)
