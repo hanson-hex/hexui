@@ -34,7 +34,15 @@ export default {
   created() {},
   mounted() {
     // this.$emit("update:selected", "这时 this 出来的数据")
-    this.eventBus.$emit("update:selected", this.selected)
+    this.$children.forEach((element) => {
+      if (element.$options.name === "HTabsHead") {
+        element.$children.forEach((item) => {
+          if (item.name === this.selected) {
+            this.eventBus.$emit("update:selected", this.selected, item)
+          }
+        })
+      }
+    })
   },
 }
 </script>
