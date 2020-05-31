@@ -11,9 +11,7 @@
 export default {
   name: "HTabsHead",
   inject: ["eventBus"],
-  created() {
-    console.log("this.eventBus 爷爷给父亲的eventBus", this.eventBus)
-  },
+  created() {},
 }
 </script>
 

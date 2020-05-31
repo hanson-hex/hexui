@@ -8,9 +8,7 @@
 export default {
   name: "HTabsBody",
   inject: ["eventBus"],
-  created() {
-    console.log("爷爷给body的evetBus:", this.eventBus)
-  },
+  created() {},
 }
 </script>
 

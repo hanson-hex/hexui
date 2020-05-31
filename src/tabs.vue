@@ -31,10 +31,9 @@ export default {
       eventBus: new Vue(),
     }
   },
-  created() {
-    console.log("this.eventVus", this.eventBus)
-  },
+  created() {},
   mounted() {
+    // this.$emit("update:selected", "这时 this 出来的数据")
     this.eventBus.$emit("update:selected", this.selected)
   },
 }

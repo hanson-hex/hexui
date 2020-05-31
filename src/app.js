@@ -44,6 +44,10 @@ new Vue({
   },
   created() {},
   methods: {
+    YYY(e) {
+      // console.log("e:", e)
+      console.log("YYY")
+    },
     inputChange(e) {
       console.log("1", e.target.value)
     },
