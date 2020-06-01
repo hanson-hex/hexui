@@ -31,31 +31,25 @@
     </style>
   </head>
   <body>
-    <div id="app">
-      <h-tabs :selected.sync="selectedTab" @update:selected="YYY">
-        <h-tabs-head class="frank">
-          <template slot="actions">
-            <button>设置</button>
+    <div id="app" style="margin: 100px 0 0;border: 1px solid red">
+      <div>
+        <h-popover>
+          <template slot="content">
+            <div>popover内容</div>
           </template>
-          <h-tabs-item name="woman" disabled>
-            <h-icon name="setting"></h-icon>
-            美女
-          </h-tabs-item>
-          <h-tabs-item name="finance" disabed>财经</h-tabs-item>
-          <h-tabs-item name="sports">体育</h-tabs-item>
-        </h-tabs-head>
-        <h-tabs-body>
-          <h-tabs-pane name="woman">
-            美女相关咨询
-          </h-tabs-pane>
-          <h-tabs-pane name="finance">
-            财经相关咨询
-          </h-tabs-pane>
-          <h-tabs-pane name="sports">
-            体育相关咨询
-          </h-tabs-pane>
-        </h-tabs-body>
-      </h-tabs>
+          <template slot="trigger">
+            <button>点我</button>
+          </template>
+        </h-popover>
+        <h-popover>
+          <template slot="content">
+            <div></div>
+          </template>
+          <template slot="trigger">
+            <button>点我</button>
+          </template>
+        </h-popover>
+      </div>
     </div>
     <script src="./src/app.js"></script>
   </body>
