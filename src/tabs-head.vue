@@ -12,10 +12,12 @@
 export default {
   name: "HTabsHead",
   inject: ["eventBus"],
-  created() {
+  mounted() {
     this.eventBus.$on("update:selected", (item, vm) => {
-      console.log("item:", item)
-      console.log("this:", vm)
+      const { width, left } = vm.$el.getBoundingClientRect()
+      this.$refs.line.style.width = `${width}px`
+      this.$refs.line.style.left = `${left}px`
+      this.$refs.line.style.transfrom = `translateX${left}px`
     })
   },
 }
@@ -24,17 +26,18 @@ export default {
 <style lang="scss" scoped>
 $tab-height: 40px;
 $blue: blue;
+$border-text-color: #ddd;
 .tabs-head {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid red;
+  border-bottom: 1px solid $border-text-color;
   position: relative;
   > .line {
     position: absolute;
     bottom: 0;
-    width: 100px;
     border-bottom: 1px solid $blue;
+    transition: all 350ms;
   }
   > .actions-wrapper {
     margin-left: auto;

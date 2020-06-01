@@ -40,7 +40,7 @@ Vue.component("h-tabs-item", TabsItem)
 new Vue({
   el: "#app",
   data: {
-    selectedTab: "woman",
+    selectedTab: "sports",
   },
   created() {},
   methods: {

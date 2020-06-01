@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-item" :class="classes" @click="update">
+  <div class="tabs-item" :class="classes" :data-name="name" @click="update">
     <slot></slot>
   </div>
 </template>
@@ -27,17 +27,22 @@ export default {
     classes() {
       return {
         active: this.active,
+        disabled: this.disabled,
       }
     },
   },
   created() {
-    this.eventBus.$on("update:selected", (name) => {
-      this.active = name === this.name
-    })
+    if (this.eventBus) {
+      this.eventBus.$on("update:selected", (name) => {
+        this.active = name === this.name
+      })
+    }
   },
   methods: {
     update() {
-      this.eventBus.$emit("update:selected", this.name, this)
+      if (this.disabled) return
+      this.eventBus && this.eventBus.$emit("update:selected", this.name, this)
+      this.$emit('click', this)
     },
   },
 }
@@ -46,19 +51,21 @@ export default {
 <style lang="scss" scoped>
 $tab-height: 40px;
 $blue: blue;
+$disabled-color: grey;
 .tabs-item {
-  // flex-grow: 1;
   flex-shrink: 0;
   padding: 0 1em;
   cursor: pointer;
-  // border: 1px solid green;
   height: $tab-height;
   display: flex;
   align-items: center;
   &.active {
-    // background: red;
     color: $blue;
-    font-weight: 500;
+    font-weight: bold;
+  }
+  &.disabled {
+    color: $disabled-color;
+    cursor: not-allowed;
   }
 }
 </style>
