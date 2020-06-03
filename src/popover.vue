@@ -38,8 +38,8 @@ export default {
             top,
           } = this.$refs.triggerWrapper.getBoundingClientRect()
           console.log("wdith", width)
-          this.$refs.contentWrapper.style.left = `${left}px`
-          this.$refs.contentWrapper.style.top = `${top}px`
+          this.$refs.contentWrapper.style.left = `${left + window.scrollX}px`
+          this.$refs.contentWrapper.style.top = `${top + window.scrollY}px`
           let eventHander = () => {
             this.visible = false
             document.removeEventListener("click", eventHander)
