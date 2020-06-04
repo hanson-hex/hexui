@@ -1,11 +1,6 @@
 <template>
-  <div class="popover" @click.stop="xxx()">
-    <div
-      class="content-wrapper"
-      ref="contentWrapper"
-      v-show="visible"
-      @click="zzz"
-    >
+  <div class="popover" @click="xxx">
+    <div class="content-wrapper" ref="contentWrapper" v-if="visible">
       <slot name="content"></slot>
     </div>
     <span ref="triggerWrapper">
@@ -23,33 +18,54 @@ export default {
     }
   },
   methods: {
-    zzz() {
-      console.log("zzz")
-    },
     xxx() {
       this.visible = !this.visible
-      if (this.visible) {
+      console.log("切换visible")
+      if (this.visible === true) {
         this.$nextTick(() => {
-          document.body.appendChild(this.$refs.contentWrapper)
-          let {
-            width,
-            height,
-            left,
-            top,
-          } = this.$refs.triggerWrapper.getBoundingClientRect()
-          console.log("wdith", width)
-          this.$refs.contentWrapper.style.left = `${left + window.scrollX}px`
-          this.$refs.contentWrapper.style.top = `${top + window.scrollY}px`
-          let eventHander = () => {
+          document.body.addEventListener("click", () => {
             this.visible = false
-            document.removeEventListener("click", eventHander)
-          }
-          document.addEventListener("click", eventHander)
+            console.log("点击body关闭popover")
+          })
         })
       }
+      // if (this.visible) {
+      //   setTimeout(() => {
+      //     let eventHander = () => {
+      //       console.log("点击了body")
+      //       this.visible = false
+      //       document.removeEventListener("click", eventHander)
+      //       console.log("关闭1")
+      //     }
+      //     console.log("新增监听器")
+      //     // document.addEventListener("click", eventHander)
+      //     document.addEventListener(
+      //       "click",
+      //       function x() {
+      //         console.log("点击了body")
+      //         this.visible = false
+      //         console.log("移除监听器")
+      //         document.removeEventListener("click", x)
+      //       }.bind(this)
+      //     )
+      //   }, 3000)
+      //   // })
+      //   // this.$nextTick(() => {
+      //   // document.body.appendChild(this.$refs.contentWrapper)
+      //   // let {
+      //   //   width,
+      //   //   height,
+      //   //   left,
+      //   //   top,
+      //   // } = this.$refs.triggerWrapper.getBoundingClientRect()
+      //   // this.$refs.contentWrapper.style.left = `${left + window.scrollX}px`
+      //   // this.$refs.contentWrapper.style.top = `${top + window.scrollY}px`
+      // } else {
+      //   console.log("关闭2")
+      // }
+      // console.log("执行完毕")
     },
   },
-  mounted() {},
 }
 </script>
 
