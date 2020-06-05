@@ -8,9 +8,9 @@
     >
       <slot name="content"></slot>
     </div>
-    <span ref="triggerWrapper">
+    <div ref="triggerWrapper">
       <slot name="trigger"></slot>
-    </span>
+    </div>
   </div>
 </template>
 
@@ -45,6 +45,10 @@ export default {
         bottom: {
           left: `${left + window.scrollX}px`,
           top: `${top + window.scrollY + height}px`
+        },
+        left: {
+          left: `${left + window.scrollX}px`,
+          top: `${top + window.scrollY + (height - contentHeight) / 2}px`
         }
       }
       contentWrapper.style.left = positions[this.position].left
@@ -137,21 +141,39 @@ $border-radius: 4px;
     }
   }
   &.position-bottom {
-    // transform: translateY(100%);
     margin-top: 10px;
     &::before,
     &::after {
       left: 10px;
     }
     &::before {
-      border-top-color: black;
-      border-bottom: none;
+      border-bottom-color: black;
+      border-top: none;
       bottom: 100%;
     }
     &::after {
-      border-top-color: white;
-      border-bottom: none;
+      border-bottom-color: white;
+      border-top: none;
       bottom: calc(100% - 1px);
+    }
+  }
+  &.position-left {
+    margin-left: -10px;
+    transform: translateX(-100%);
+    &::before,
+    &::after {
+      transform: translateY(-50%);
+      top: 50%;
+    }
+    &::before {
+      border-left-color: black;
+      border-right: none;
+      left: 100%;
+    }
+    &::after {
+      border-left-color: white;
+      border-right: none;
+      left: calc(100% - 1px);
     }
   }
 }
