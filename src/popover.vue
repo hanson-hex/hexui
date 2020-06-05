@@ -8,9 +8,9 @@
     >
       <slot name="content"></slot>
     </div>
-    <div ref="triggerWrapper">
+    <span ref="triggerWrapper" style="display: inline-block">
       <slot name="trigger"></slot>
-    </div>
+    </span>
   </div>
 </template>
 
@@ -23,12 +23,12 @@ export default {
       default: "top",
       validator(value) {
         return ["left", "right", "top", "bottom"].indexOf(value) >= 0
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      visible: false
+      visible: false,
     }
   },
   methods: {
@@ -40,16 +40,20 @@ export default {
       let positions = {
         top: {
           left: `${left + window.scrollX}px`,
-          top: `${top + window.scrollY}px`
+          top: `${top + window.scrollY}px`,
         },
         bottom: {
           left: `${left + window.scrollX}px`,
-          top: `${top + window.scrollY + height}px`
+          top: `${top + window.scrollY + height}px`,
         },
         left: {
           left: `${left + window.scrollX}px`,
-          top: `${top + window.scrollY + (height - contentHeight) / 2}px`
-        }
+          top: `${top + window.scrollY + (height - contentHeight) / 2}px`,
+        },
+        right: {
+          left: `${left + window.scrollX + width}px`,
+          top: `${top + window.scrollY + (height - contentHeight) / 2}px`,
+        },
       }
       contentWrapper.style.left = positions[this.position].left
       contentWrapper.style.top = positions[this.position].top
@@ -67,15 +71,13 @@ export default {
     },
     eventHandler(e) {
       console.log("e", e.target)
-      if (this.$refs.popover && this.$refs.popover.contains(e.target)) {
-        return
-      }
       if (
         this.$refs.contentWrapper &&
         this.$refs.contentWrapper.contains(e.target)
       ) {
         return
       }
+      console.log("关闭1")
       this.onClose()
     },
     onClose() {
@@ -92,8 +94,8 @@ export default {
           this.onClose()
         }
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -130,7 +132,7 @@ $border-radius: 4px;
       left: 10px;
     }
     &::before {
-      border-top-color: black;
+      border-top-color: $border-color;
       border-bottom: none;
       top: 100%;
     }
@@ -147,7 +149,7 @@ $border-radius: 4px;
       left: 10px;
     }
     &::before {
-      border-bottom-color: black;
+      border-bottom-color: $border-color;
       border-top: none;
       bottom: 100%;
     }
@@ -166,7 +168,7 @@ $border-radius: 4px;
       top: 50%;
     }
     &::before {
-      border-left-color: black;
+      border-left-color: $border-color;
       border-right: none;
       left: 100%;
     }
@@ -174,6 +176,24 @@ $border-radius: 4px;
       border-left-color: white;
       border-right: none;
       left: calc(100% - 1px);
+    }
+  }
+  &.position-right {
+    margin-left: 10px;
+    &::before,
+    &::after {
+      transform: translateY(-50%);
+      top: 50%;
+    }
+    &::before {
+      border-right-color: $border-color;
+      border-left: none;
+      right: 100%;
+    }
+    &::after {
+      border-right-color: white;
+      border-left: none;
+      right: calc(100% - 1px);
     }
   }
 }

@@ -36,23 +36,42 @@
       style="padding-top: 100px;padding-left: 100px;border: 1px solid red"
     >
       <div>
-        <div style="border: 1px solid green" @click="YYY">
+        <div @click="YYY">
           <h-popover position="left">
             <template slot="content">
-              <div>内容内容内容</div>
+              <div>dfsafdsfasdfsafsadfsadfsadfsadfsadfsadfdsafsdaf</div>
             </template>
             <template slot="trigger">
-              <button>点我</button>
+              <h-button>点我</h-button>
             </template>
           </h-popover>
-          <!-- <h-popover>
+          <h-popover position="right">
             <template slot="content">
               <div>popover内容</div>
             </template>
             <template slot="trigger">
-              <button>点我</button>
+              <h-button>点我</h-button>
             </template>
-          </h-popover> -->
+            </template>
+          </h-popover>
+          <h-popover position="top">
+            <template slot="content">
+              <div>popover内容</div>
+            </template>
+            <template slot="trigger">
+              <h-button>点我</h-button>
+            </template>
+            </template>
+          </h-popover>
+          <h-popover position="bottom">
+            <template slot="content">
+              <div>popover内容</div>
+            </template>
+            <template slot="trigger">
+              <h-button>点我</h-button>
+            </template>
+            </template>
+          </h-popover>
         </div>
       </div>
     </div>
