@@ -38,21 +38,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$button-height: 32px;
+$font-size: 14px;
+$button-bg: white;
+$button-active-bg: #eee;
+$border-radius: 4px;
+$color: #333;
+$border-color: #999;
+$border-color-hover: #666;
 .h-button {
-  font-size: var(--font-size);
-  height: var(--button-height);
+  font-size: $font-size;
+  height: $button-height;
   padding: 0 1em; /*width*/
   vertical-align: middle;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  background: var(--button-bg);
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background: $button-bg;
   display: inline-flex;
   align-items: center;
   &:hover {
-    border-color: var(--border-color-hover);
+    border-color: $border-color-hover;
   }
   &:active {
-    background: var(--button-active-bg);
+    background: $button-active-bg;
   }
   &:focus {
     outline: none;

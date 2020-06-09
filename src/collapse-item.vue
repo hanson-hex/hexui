@@ -23,17 +23,14 @@ export default {
   data() {
     return {
       open: false,
-      single: false,
     }
   },
   inject: ["eventBus"],
   mounted() {
     this.eventBus &&
-      this.eventBus.$on("update:selected", (name) => {
-        if (name !== this.name) {
-          if (this.single) {
-            this.open = false
-          }
+      this.eventBus.$on("update:selected", (names) => {
+        if (names.indexOf(this.name) < 0) {
+          this.open = false
         } else {
           this.open = true
         }
@@ -42,9 +39,9 @@ export default {
   methods: {
     toggle() {
       if (this.open) {
-        this.open = false
+        this.eventBus && this.eventBus.$emit("update:removeSelected", this.name)
       } else {
-        this.eventBus && this.eventBus.$emit("update:selected", this.name)
+        this.eventBus && this.eventBus.$emit("update:addSelected", this.name)
       }
     },
   },

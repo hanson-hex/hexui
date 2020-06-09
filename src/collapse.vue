@@ -14,7 +14,8 @@ export default {
       default: false,
     },
     selected: {
-      type: String,
+      type: Array,
+      default: [],
     },
   },
   data() {
@@ -29,11 +30,25 @@ export default {
   },
   mounted() {
     this.eventBus.$emit("update:selected", this.selected)
-    this.eventBus.$on("update:selected", (name) => {
-      this.$emit("update:selected", name)
+    this.eventBus.$on("update:addSelected", (name) => {
+      let selectedCopy
+      if (this.single) {
+        selectedCopy = [name]
+      } else {
+        selectedCopy = JSON.parse(JSON.stringify(this.selected))
+        selectedCopy.push(name)
+      }
+      this.eventBus.$emit("update:selected", selectedCopy)
+      this.$emit("update:selected", selectedCopy)
     })
-    this.$children.forEach((vm) => {
-      vm.single = this.single
+    this.eventBus.$on("update:removeSelected", (name) => {
+      let selectedCopy = JSON.parse(JSON.stringify(this.selected))
+      console.log(name, this.selected)
+      const index = this.selected.indexOf(name)
+      console.log("index:", index)
+      selectedCopy.splice(index, 1)
+      this.eventBus.$emit("update:selected", selectedCopy)
+      this.$emit("update:selected", selectedCopy)
     })
   },
 }
