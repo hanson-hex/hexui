@@ -18,6 +18,8 @@ import TabsItem from "./tabs-item"
 import TabsBody from "./tabs-body"
 import TabsPane from "./tabs-pane"
 import Popover from "./popover"
+import CollapseItem from "./collapse-item"
+import Collapse from "./collapse"
 
 Vue.component("h-button", Button)
 Vue.component("h-icon", Icon)
@@ -38,11 +40,13 @@ Vue.component("h-tabs-pane", TabsPane)
 Vue.component("h-tabs-head", TabsHead)
 Vue.component("h-tabs-item", TabsItem)
 Vue.component("h-popover", Popover)
+Vue.component("h-collapse", Collapse)
+Vue.component("h-collapse-item", CollapseItem)
 
 new Vue({
   el: "#app",
   data: {
-    selectedTab: "sports",
+    selectedTab: "1",
   },
   created() {},
   methods: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" ref="popover" @click="onClick">
+  <div class="popover" ref="popover">
     <div
       class="content-wrapper"
       :class="{ [`position-${position}`]: true }"
@@ -18,6 +18,13 @@
 export default {
   name: "HPopover",
   props: {
+    trigger: {
+      type: String,
+      default: "click",
+      validator(value) {
+        return ["click", "hover"].indexOf(value) >= 0
+      },
+    },
     position: {
       type: String,
       default: "top",
@@ -29,6 +36,23 @@ export default {
   data() {
     return {
       visible: false,
+    }
+  },
+  computed: {},
+  mounted() {
+    if (this.trigger === "click") {
+      this.$refs.popover.addEventListener("click", this.onClick)
+    } else {
+      this.$refs.popover.addEventListener("mouseenter", this.onShow)
+      this.$refs.popover.addEventListener("mouseleave", this.onClose)
+    }
+  },
+  destroyed() {
+    if (this.trigger === "click") {
+      this.$refs.popover.removeEventListener("click", this.onClick)
+    } else {
+      this.$refs.popover.removeEventListener("mouseenter", this.onShow)
+      this.$refs.popover.removeEventListener("mouseleave", this.onClose)
     }
   },
   methods: {
