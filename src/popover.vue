@@ -9,7 +9,7 @@
       <slot name="content"></slot>
     </div>
     <span ref="triggerWrapper" style="display: inline-block">
-      <slot name="trigger"></slot>
+      <slot></slot>
     </span>
   </div>
 </template>

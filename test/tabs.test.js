@@ -33,7 +33,7 @@ describe("Tabs", () => {
           <h-tabs-pane name="finance">财经相关咨询</h-tabs-pane>
           <h-tabs-pane name="sports">体育相关咨询</h-tabs-pane>
         </h-tabs-body>
-      </h-tabs
+      </h-tabs>
         `
     const vm = new Vue({
       el: div,

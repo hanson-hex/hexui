@@ -1,6 +1,6 @@
-# 按钮
+# Button-按钮
 
-使用方法
+## 简单用法
 
 <ClientOnly>
   <button-demos></button-demos>

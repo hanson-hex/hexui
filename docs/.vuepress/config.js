@@ -1,6 +1,7 @@
 module.exports = {
   base: "/hexui/",
   title: "hexUi",
+  cache: false,
   description: "好用的ui框架",
   themeConfig: {
     nav: [

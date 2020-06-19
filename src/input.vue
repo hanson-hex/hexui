@@ -4,16 +4,16 @@
       :value="value"
       @change="$emit('change', $event.target.value)"
       @focus="$emit('focus', $event.target.value)"
-      @blur="$emit('blur', $event.target.value)" 
-      @input="$emit('input', $event.target.value)" 
-      :disabled="disabled" 
-      :readonly="readonly" 
+      @blur="$emit('blur', $event.target.value)"
+      @input="$emit('input', $event.target.value)"
+      :disabled="disabled"
+      :readonly="readonly"
       type="text"
     />
     <template v-if="error">
       <icon class="icon-error" name="error"></icon>
       <span class="errorMessage">{{ error }}</span>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -48,18 +48,18 @@ $border-color: #999;
 $border-color-hover: #666;
 $font-size: 12px;
 $border-radius: 4px;
-$red: #F1453D;
+$red: #f1453d;
 $box-shadow-color: rgba(0, 0, 0, 0.5);
 .wrapper {
   font-size: $font-size;
   display: inline-flex;
   align-items: center;
   > :not(:last-child) {
-    margin-right: .5em;
+    margin-right: 0.5em;
   }
   &.error {
     > input {
-      border-color: #F1453D;
+      border-color: #f1453d;
     }
   }
   .icon-error {
