@@ -45,56 +45,7 @@
       }
     </style>
     <div id="app" style="padding: 100px 50px;border: 1px solid red">
-      <h-collapse single :selected.sync="selectedTab">
-        <h-collapse-item title="名称1" name="1">内容1</h-collapse-item>
-        <h-collapse-item title="名称2" name="2">内容2</h-collapse-item>
-        <h-collapse-item title="名称3" name="3">内容3</h-collapse-item>
-      </h-collapse>
-      <h-input value="hello"></h-input>
-      <h-input value="hello" disabled></h-input>
-      <h-input value="hello" readonly></h-input>
-      <h-tabs selected="1">
-        <h-tabs-head>
-          <h-tabs-item name="1">1</h-tabs-item>
-          <h-tabs-item name="2">2</h-tabs-item>
-        </h-tabs-head>
-        <h-tabs-body>
-          <h-tabs-pane name="1">content 1</h-tabs-pane>
-          <h-tabs-pane name="2">content 2</h-tabs-pane>
-        </h-tabs-body>
-      </h-tabs>
-
-      <h-popover>
-        <h-button>上方弹出</h-button>
-        <template slot="content">
-          弹出内容
-        </template>
-      </h-popover>
-      <h-popover position="bottom">
-        <h-button>下方弹出</h-button>
-        <template slot="content">
-          弹出内容
-        </template>
-      </h-popover>
-      <h-popover position="left">
-        <h-button>左边弹出</h-button>
-        <template slot="content">
-          弹出内容
-        </template>
-      </h-popover>
-      <h-popover position="right">
-        <h-button>右边弹出</h-button>
-        <template slot="content">
-          弹出内容
-        </template>
-      </h-popover>
-      <h-button @click="$toast('点击弹出提示')">上方弹出</h-button>
-      <h-button @click="$toast('点击弹出提示', { position: 'middle' })"
-        >中间弹出</h-button
-      >
-      <h-button @click="$toast('点击弹出提示', { position: 'bottom' })"
-        >下方弹出</h-button
-      >
+      <h-cascader :source="source"></h-cascader>
     </div>
     <script src="./src/app.js"></script>
   </body>

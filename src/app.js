@@ -20,6 +20,7 @@ import TabsPane from "./tabs-pane"
 import Popover from "./popover"
 import CollapseItem from "./collapse-item"
 import Collapse from "./collapse"
+import Cascader from "./cascader"
 
 Vue.component("h-button", Button)
 Vue.component("h-icon", Icon)
@@ -42,11 +43,60 @@ Vue.component("h-tabs-item", TabsItem)
 Vue.component("h-popover", Popover)
 Vue.component("h-collapse", Collapse)
 Vue.component("h-collapse-item", CollapseItem)
+Vue.component("h-cascader", Cascader)
 
 new Vue({
   el: "#app",
   data: {
     selectedTab: ["1", "2"],
+    source: [
+      {
+        name: "浙江",
+        children: [
+          {
+            name: "杭州",
+            children: [
+              {
+                name: "上城区",
+              },
+              {
+                name: "下城区",
+              },
+            ],
+          },
+          {
+            name: "湖州",
+            children: [
+              {
+                name: "测试1",
+              },
+              {
+                name: "测试2",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "福建",
+        children: [
+          {
+            name: "福州",
+            children: [
+              {
+                name: "鼓楼区",
+              },
+              {
+                name: "台江区",
+              },
+              {
+                name: "苍山",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   created() {},
   methods: {

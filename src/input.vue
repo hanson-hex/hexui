@@ -43,13 +43,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$height: 32px;
-$border-color: #999;
-$border-color-hover: #666;
-$font-size: 12px;
-$border-radius: 4px;
-$red: #f1453d;
-$box-shadow-color: rgba(0, 0, 0, 0.5);
+@import "var";
+$height: $input-height;
 .wrapper {
   font-size: $font-size;
   display: inline-flex;

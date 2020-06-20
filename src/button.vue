@@ -38,14 +38,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$button-height: 32px;
-$font-size: 14px;
-$button-bg: white;
-$button-active-bg: #eee;
-$border-radius: 4px;
-$color: #333;
-$border-color: #999;
-$border-color-hover: #666;
+@import "var";
+$button-height: $button-height;
 .h-button {
   font-size: $font-size;
   height: $button-height;
